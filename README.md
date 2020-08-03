@@ -1,12 +1,12 @@
 # toolkit-for-generating-test-data
  
-This toolkit is basically subsetting and downsampling a genomic data so that we can use as a test data. As a developer, we use test data oftenly. It's better to use a section of whole data to test our model because small data is good for quick test. Sometimes, there are very big data's which will take more than a 24 hrs to run on their pipelines. Therefore, its a good way to generate their own small test data.
+This toolkit was developed with the goal of creating genomic test data by subsetting and downsampling BAM, CRAM, and SAM files. As a developer, we use test data often. It's sometimes better to use a section of whole data to test our model because small data is good for a quick test. Sometimes, there are very big datasets which will take more than a 24 hrs to run on their pipelines. Therefore, it is good to have a way to generate our own small test data.
 
 ## Authors
 
 Ibrahim Jabarkhel ibrahimjabarkhil747@gmail.com <br>
 Nicholas Vasquez nivasquez@csumb.edu <br>
-Ash O'farrell aofarrel@ucsc.edu
+Ash O'Farrell aofarrel@ucsc.edu
 
 ## How to run toolkit-for-generating-test-data
 If user doesn't want to build their own toolkit than go to section "Running Workflow with Dockstore CLI"
@@ -90,12 +90,11 @@ First, this wdl file has task and workflow. The workflow is like a main function
 provide the path to your SAM, BAM, or CRAM file location to toolkit_for_GTD.inputFile. If it's CRAM file than also provide path to reference file in toolkit_for_GTD.referenceFile.
 
 
-## Running workflow with Dockstore CLI
+## Running workflow with the Dockstore CLI
 
 Download the dockstore.wdl and test_input.json files. Open test_input.json file and provide the path to your BAM, SAM or CRAM file. If it's CRAM file than also provide a reference file. To run this workflow with our inputs in json file we need a dockstore CLI. <br>
-Finally, run this workflow with the dockstore CLI. If dockstore is not installed yet. <br>
-Follow this tutorial to install Dockstore CLI <a href="https://dockstore.org/quick-start"> Install Docker </a>. <br>
-After installing successfully Dockstore CLI than open Dockstore CLI or terminal or similar application in your system. Move to the directory where the WDL and JSON file exist. 
+Finally, run this workflow with the Dockstore CLI. If Dockstore is not installed yet, follow <a href="https://dockstore.org/quick-start"> this tutorial to install Dockstore CLI </a>. <br>
+After successfully installing the Dockstore CLI, open Dockstore CLI or terminal or similar application in your system. Move to the directory where the WDL and JSON file exist. 
 
 Run this statement to run the WDL workflow with the JSON file where inputs are given to generate a test data from it. <br>
 
@@ -131,3 +130,5 @@ So that’s a lot of information but you can see the process was a success. The 
 The final output can be found at
 
 - /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1596409455707-0/cromwell-executions/toolkit_for_GTD/e2419e1b-1b1b-488d-be4d-ba2482e8a3f0/call-downSamplingFile/execution/downsampled.NWD119836.0005.recab.cram
+
+Please note that when you are running this WDL on your local machine, the final output will be in a different folder. What's shown here is an example. However, by default, if you are running on the Dockstore CLI on a Mac OS X machine, the output will be somewhere in /private/var/
