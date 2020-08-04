@@ -17,9 +17,9 @@ If user doesn't want to build their own toolkit than go to section "Running Work
 Install docker in your local machine, follow this tutorial <a href="https://bioinformatics-core-shared-training.github.io/docker-4-bioinformatics/"> Docker-4-Bioinformatics </a>
 After successful installation of Docker, download the Dockerfile from this repo or copy paste below code in any system editor and save it as Dockerfile (have no extensions).
 
-    #############################################################
-    # Dockerfile to build a downsampling tool container for Bam
-    #############################################################
+    ##########################################################################
+    # Dockerfile to build a downsampling tool container for Bam, SAM, and CRAM
+    ##########################################################################
 
     # Set the base image to Ubuntu
     FROM ubuntu:14.04
@@ -65,7 +65,7 @@ This Dockerfile is actually installing all dependencies for this toolkit and esp
 ## Building in local machine manually
 Execute this statement in local machine terminal
 
-    docker build -t="toolkit-for-generating-test-data" .
+    $> docker build -t="toolkit-for-generating-test-data" .
 
 After successfully creating the image than replace the docker image name in WDL file with your own image name. Download the dockstore.wdl and test_input.json file from this repo.
 Change image name in the wdl file at the runtime section:
