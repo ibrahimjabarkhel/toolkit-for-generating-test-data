@@ -33,6 +33,11 @@ task downSamplingFile {
     memory: "15 GB"
     disks: "local-disk " + disk_size + " HDD"
   }
+  meta {
+      author: "Ibrahim Jabarkhel"
+      email: "ibrahimjabarkhil747@gmail.com"
+      description: "This toolkit was developed with the goal of creating genomic test data by subsetting and downsampling BAM, CRAM, and SAM files. As a developer, we use test data often. It's sometimes better to use a section of whole data to test our model because small data is good for a quick test. Sometimes, there are very big datasets which will take more than a 24 hrs to run on their pipelines. Therefore, it is good to have a way to generate our own small test data. For more info: https://github.com/ibrahimjabarkhel/toolkit-for-generating-test-data"
+  }
 }
 
 
