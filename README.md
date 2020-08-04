@@ -67,7 +67,7 @@ Execute this statement in local machine terminal
 
     $> docker build -t="toolkit-for-generating-test-data" .
 
-After successfully creating the image than replace the docker image name in WDL file with your own image name. Download the dockstore.wdl and test_input.json file from this repo.
+After successfully creating the image than replace the docker image name in WDL file with your own image name. Download the Dockstore.wdl and test_input.json file from this repo.
 Change image name in the wdl file at the runtime section:
 
     runtime {
@@ -92,7 +92,7 @@ provide the path to your SAM, BAM, or CRAM file location to toolkit_for_GTD.inpu
 
 ## Running workflow with the Dockstore CLI
 
-Download the dockstore.wdl and test_input.json files. Open test_input.json file and provide the path to your BAM, SAM or CRAM file. If it's CRAM file than also provide a reference file. To run this workflow with our inputs in json file we need a dockstore CLI. <br>
+Download the Dockstore.wdl and test_input.json files. Open test_input.json file and provide the path to your BAM, SAM or CRAM file. If it's CRAM file than also provide a reference file. To run this workflow with our inputs in json file we need a dockstore CLI. <br>
 Finally, run this workflow with the Dockstore CLI. If Dockstore is not installed yet, follow <a href="https://dockstore.org/quick-start"> this tutorial to install Dockstore CLI </a>. <br>
 After successfully installing the Dockstore CLI, open Dockstore CLI or terminal or similar application in your system. Move to the directory where the WDL and JSON file exist. 
 
