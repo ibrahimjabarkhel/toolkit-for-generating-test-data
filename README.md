@@ -78,23 +78,25 @@ Change image name in the wdl file at the runtime section:
     
 ## Understanding of WDL and JSON File
 
-First, this wdl file has task and workflow. The workflow is like a main function which will receiving inputs from the json file. It calls the task downSamplingFile which will downsample and subset the file and save the output in the local machine.
+First, this wdl file has task and workflow section. The workflow is like a main function which will receiving inputs from the json file. It calls the task downSamplingFile which will downsample and subset the file and save the output in the local machine.
 
 ### Update the JSON File
 
+    # // for downsampling cram file provide reference file and referenceIndexFile, else leave reference file and reference index file empty "".
     {
        "toolkit_for_GTD.inputFile": "gs://topmed_workflow_testing/topmed_aligner/input_files/NWD119836.0005.recab.cram",
        "toolkit_for_GTD.referenceFile": "gs://topmed_workflow_testing/topmed_variant_caller/reference_files/hg38/hs38DH.fa"
+       "toolkit_for_GTD.referenceIndexFile": "gs://topmed_workflow_testing/topmed_variant_caller/reference_files/hg38/hs38DH.fa.fai"
     }
     
-provide the path to your SAM, BAM, or CRAM file location to toolkit_for_GTD.inputFile. If it's CRAM file than also provide path to reference file in toolkit_for_GTD.referenceFile.
+Provide the path to your SAM, BAM, or CRAM file location to toolkit_for_GTD.inputFile. If it's CRAM file than also provide path to reference file and reference index file.
 
 
 ## Running workflow with the Dockstore CLI
 
-Download the Dockstore.wdl and test_input.json files. Open test_input.json file and provide the path to your BAM, SAM or CRAM file. If it's CRAM file than also provide a reference file. To run this workflow with our inputs in json file we need a dockstore CLI. <br>
+Download the Dockstore.wdl and test_input.json files. Open test_input.json file and provide the path to your BAM, SAM or CRAM file. If it's CRAM file than also provide a reference file ( .fa ) and reference index file ( .fa.fai ). To run this workflow with our inputs in json file we need a dockstore CLI. <br>
 Finally, run this workflow with the Dockstore CLI. If Dockstore is not installed yet, follow <a href="https://dockstore.org/quick-start"> this tutorial to install Dockstore CLI </a>. <br>
-After successfully installing the Dockstore CLI, open Dockstore CLI or terminal or similar application in your system. Move to the directory where the WDL and JSON file exist. 
+After successfully installing the Dockstore CLI, open Dockstore CLI or terminal or similar application in your system. Move to the directory in terminal where the WDL and JSON file exist. 
 
 Run this statement to run the WDL workflow with the JSON file where inputs are given to generate a test data from it. <br>
 
