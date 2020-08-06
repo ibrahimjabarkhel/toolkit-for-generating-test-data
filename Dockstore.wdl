@@ -4,6 +4,7 @@ task downSamplingFile {
   input {
         File inputFile
         File referenceFile
+        File referenceIndexFile
         String inputFileName
         Float disk_size
   }
@@ -45,6 +46,7 @@ workflow toolkit_for_GTD {
   input {
         File referenceFile
         File inputFile
+        File referenceIndexFile
         # Optional input to increase all disk sizes in case of outlier sample with strange size behavior
         # declare int variable that will help in increase disk size if needed
         Int? increase_disk_size
@@ -60,6 +62,7 @@ workflow toolkit_for_GTD {
   call downSamplingFile { input: inputFile = inputFile,
                  inputFileName = inputFileName,
                  referenceFile = referenceFile,
+                 referenceIndexFile = referenceIndexFile,
                  disk_size = inputFileSize + additional_diskSize
   }
 }
