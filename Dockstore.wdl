@@ -56,13 +56,13 @@ workflow toolkit_for_GTD {
   
   # Get the size of the standard input file
   Float inputFileSize = size(inputFile, "GB")
-
+  Float ref_file_size = size(referenceFile, "GB") + size(referenceIndexFile, "GB")
   String inputFileName = basename("${inputFile}")
   
   call downSamplingFile { input: inputFile = inputFile,
                  inputFileName = inputFileName,
                  referenceFile = referenceFile,
                  referenceIndexFile = referenceIndexFile,
-                 disk_size = inputFileSize + additional_diskSize
+                 disk_size = inputFileSize + additional_diskSize + ref_file_size
   }
 }
