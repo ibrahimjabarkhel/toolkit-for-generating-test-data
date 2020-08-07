@@ -1,5 +1,3 @@
-# // for downsampling cram file provide reference file and referenceIndexFile, else leave reference file and reference index file empty "".
-
 {
    "toolkit_for_GTD.inputFile": "gs://topmed_workflow_testing/topmed_aligner/input_files/NWD119836.0005.recab.cram",
    "toolkit_for_GTD.referenceFile": "gs://topmed_workflow_testing/topmed_variant_caller/reference_files/hg38/hs38DH.fa",
