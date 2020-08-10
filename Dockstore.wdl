@@ -8,6 +8,9 @@ task downSamplingFile {
         String inputFileName
         Float disk_size
   }
+  String s = disk_size
+  String string_before_decimal = sub(s, "\\..*", "")
+  Int new_disk_size = string_before_decimal
 
   command {
     # Downsampling and Subsetting data by samtools
@@ -32,7 +35,7 @@ task downSamplingFile {
  runtime {
     docker: "quay.io/ibrahimjabarkhel/toolkit-for-generating-test-data:latest"
     memory: "15 GB"
-    disks: "local-disk " + disk_size + " HDD"
+    disks: "local-disk " + new_disk_size + " HDD"
   }
   meta {
       author: "Ibrahim Jabarkhel"
