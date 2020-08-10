@@ -26,8 +26,6 @@ task downSamplingFile {
   }
 
   output {
-    File cramToBam = "${inputFileName}.bam"
-    File downSampledBam = "downsampled.${inputFileName}.bam"
     File downsampledFile = "downsampled.${inputFileName}"
   }
 
