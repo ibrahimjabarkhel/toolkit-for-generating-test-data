@@ -6,11 +6,8 @@ task downSamplingFile {
         File referenceFile
         File referenceIndexFile
         String inputFileName
-        Float disk_size
+        Int disk_size
   }
-  String s = disk_size
-  String string_before_decimal = sub(s, "\\..*", "")
-  Int new_disk_size = string_before_decimal
 
   command {
     # Downsampling and Subsetting data by samtools
@@ -34,8 +31,9 @@ task downSamplingFile {
 
  runtime {
     docker: "quay.io/ibrahimjabarkhel/toolkit-for-generating-test-data:latest"
+    cores: 4
     memory: "15 GB"
-    disks: "local-disk " + new_disk_size + " HDD"
+    disks: "local-disk " + disk_size + " HDD"
   }
   meta {
       author: "Ibrahim Jabarkhel"
@@ -59,8 +57,9 @@ workflow toolkit_for_GTD {
   
   # Get the size of the standard input file
   Float inputFileSize = size(inputFile, "GB")
-  Float ref_file_size = size(referenceFile, "GB") + size(referenceIndexFile, "GB")
-  Float output_size = (inputFileSize/100)*15
+  Int inputFileSize = ceil(size(inputFile, "GB"))
+  Int ref_file_size = ceil(size(referenceFile, "GB") + size(referenceIndexFile, "GB"))
+  Int output_size = ceil((inputFileSize/100)*15)
   String inputFileName = basename("${inputFile}")
   
   call downSamplingFile { input: inputFile = inputFile,
