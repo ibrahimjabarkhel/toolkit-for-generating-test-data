@@ -63,7 +63,6 @@ workflow toolkit_for_GTD {
   Float output_size = (inputFileSize/100)*15
   String inputFileName = basename("${inputFile}")
 
-  #Int randomNum = choose_random(15, 45)
   call downSamplingFile { input: inputFile = inputFile,
                  inputFileName = inputFileName,
                  referenceFile = referenceFile,
