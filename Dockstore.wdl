@@ -19,12 +19,12 @@ task downSamplingFile {
         # converting cram to bam
         samtools view -b ${inputFile} -T ${referenceFile} > ${inputFileName}.bam
         # downsampling and subsetting the file
-        samtools view -bs 35.1 ${inputFileName}.bam > downsampled.${inputFileName}.bam
+        samtools view -bs $((20 + RANDOM % 46)).1 ${inputFileName}.bam > downsampled.${inputFileName}.bam
         # converting back to cram file
         samtools view -C downsampled.${inputFileName}.bam -T ${referenceFile} -o downsampled.${inputFileName}
     else
         #downsampling and subsetting the file
-        samtools view -bs 35.1 ${inputFile} > downsampled.${inputFileName}
+        samtools view -bs $((20 + RANDOM % 46)).1 ${inputFile} > downsampled.${inputFileName}
     fi
   }
 
@@ -62,7 +62,8 @@ workflow toolkit_for_GTD {
   Float ref_file_size = size(referenceFile, "GB") + size(referenceIndexFile, "GB")
   Float output_size = (inputFileSize/100)*15
   String inputFileName = basename("${inputFile}")
-  
+
+  #Int randomNum = choose_random(15, 45)
   call downSamplingFile { input: inputFile = inputFile,
                  inputFileName = inputFileName,
                  referenceFile = referenceFile,

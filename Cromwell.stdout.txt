@@ -1,118 +1,118 @@
-	[2020-08-11 11:33:00,13] [info] Running with database db.url = jdbc:hsqldb:mem:6866526a-7f21-41fa-abff-7e1d6ee858c3;shutdown=false;hsqldb.tx=mvcc
-	[2020-08-11 11:33:08,27] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
-	[2020-08-11 11:33:08,28] [info] [RenameWorkflowOptionsInMetadata] 100%
-	[2020-08-11 11:33:08,39] [info] Running with database db.url = jdbc:hsqldb:mem:13ff514c-cf12-4093-93a0-75a1f3b3bc0c;shutdown=false;hsqldb.tx=mvcc
-	[2020-08-11 11:33:08,90] [info] Slf4jLogger started
-	[2020-08-11 11:33:09,17] [info] Workflow heartbeat configuration:
+	[2020-08-12 14:23:40,06] [info] Running with database db.url = jdbc:hsqldb:mem:71ba9b5e-1abb-47b6-858d-5639315e1d6b;shutdown=false;hsqldb.tx=mvcc
+	[2020-08-12 14:23:47,78] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+	[2020-08-12 14:23:47,79] [info] [RenameWorkflowOptionsInMetadata] 100%
+	[2020-08-12 14:23:47,89] [info] Running with database db.url = jdbc:hsqldb:mem:4c0aff87-c085-4934-b516-75a251d930dd;shutdown=false;hsqldb.tx=mvcc
+	[2020-08-12 14:23:48,35] [info] Slf4jLogger started
+	[2020-08-12 14:23:48,62] [info] Workflow heartbeat configuration:
 	{
-	  "cromwellId" : "cromid-178e0f4",
+	  "cromwellId" : "cromid-c7c8999",
 	  "heartbeatInterval" : "2 minutes",
 	  "ttl" : "10 minutes",
 	  "failureShutdownDuration" : "5 minutes",
 	  "writeBatchSize" : 10000,
 	  "writeThreshold" : 10000
 	}
-	[2020-08-11 11:33:09,21] [info] Metadata summary refreshing every 1 second.
-	[2020-08-11 11:33:09,24] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
-	[2020-08-11 11:33:09,24] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
-	[2020-08-11 11:33:09,26] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
-	[2020-08-11 11:33:09,26] [[38;5;220mwarn[0m] 'docker.hash-lookup.gcr-api-queries-per-100-seconds' is being deprecated, use 'docker.hash-lookup.gcr.throttle' instead (see reference.conf)
-	[2020-08-11 11:33:09,51] [info] JobExecutionTokenDispenser - Distribution rate: 50 per 1 seconds.
-	[2020-08-11 11:33:09,56] [info] SingleWorkflowRunnerActor: Version 44
-	[2020-08-11 11:33:09,57] [info] SingleWorkflowRunnerActor: Submitting workflow
-	[2020-08-11 11:33:09,60] [info] Unspecified type (Unspecified version) workflow 637add13-7c26-4511-bd34-0d074457e4b7 submitted
-	[2020-08-11 11:33:09,62] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2m637add13-7c26-4511-bd34-0d074457e4b7[0m
-	[2020-08-11 11:33:09,64] [info] 1 new workflows fetched by cromid-178e0f4: 637add13-7c26-4511-bd34-0d074457e4b7
-	[2020-08-11 11:33:09,65] [info] WorkflowManagerActor Starting workflow [38;5;2m637add13-7c26-4511-bd34-0d074457e4b7[0m
-	[2020-08-11 11:33:09,66] [info] WorkflowManagerActor Successfully started WorkflowActor-637add13-7c26-4511-bd34-0d074457e4b7
-	[2020-08-11 11:33:09,66] [info] Retrieved 1 workflows from the WorkflowStoreActor
-	[2020-08-11 11:33:09,68] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
-	[2020-08-11 11:33:09,78] [info] MaterializeWorkflowDescriptorActor [[38;5;2m637add13[0m]: Parsing workflow as WDL 1.0
-	[2020-08-11 11:33:10,67] [info] MaterializeWorkflowDescriptorActor [[38;5;2m637add13[0m]: Call-to-Backend assignments: toolkit_for_GTD.downSamplingFile -> Local
-	[2020-08-11 11:33:10,82] [[38;5;220mwarn[0m] Local [[38;5;2m637add13[0m]: Key/s [memory, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
-	[2020-08-11 11:33:14,52] [info] Not triggering log of token queue status. Effective log interval = None
-	[2020-08-11 11:33:15,20] [info] WorkflowExecutionActor-637add13-7c26-4511-bd34-0d074457e4b7 [[38;5;2m637add13[0m]: Starting toolkit_for_GTD.downSamplingFile
-	[2020-08-11 11:33:15,53] [info] Assigned new job execution tokens to the following groups: 637add13: 1
-	[2020-08-11 11:33:18,09] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Unrecognized runtime attribute keys: disks, memory
-	[2020-08-11 11:33:18,14] [[38;5;220mwarn[0m] Localization via hard link has failed: /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/1891776096/4b25d802-de72-4841-b195-d5072f81753d -> /Users/Torakay/Desktop/BD2k/Project/GenerateTestFiles/toolkit-for-generating-test-data/cromwell-input/4b25d802-de72-4841-b195-d5072f81753d: Operation not permitted
-	[2020-08-11 11:33:25,56] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: [38;5;5m# Downsampling and Subsetting data by samtools
-	if [ -f /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/-603652492/hs38DH.fa ]
+	[2020-08-12 14:23:48,67] [info] Metadata summary refreshing every 1 second.
+	[2020-08-12 14:23:48,69] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2020-08-12 14:23:48,69] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2020-08-12 14:23:48,69] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+	[2020-08-12 14:23:48,70] [[38;5;220mwarn[0m] 'docker.hash-lookup.gcr-api-queries-per-100-seconds' is being deprecated, use 'docker.hash-lookup.gcr.throttle' instead (see reference.conf)
+	[2020-08-12 14:23:48,95] [info] JobExecutionTokenDispenser - Distribution rate: 50 per 1 seconds.
+	[2020-08-12 14:23:49,06] [info] SingleWorkflowRunnerActor: Version 44
+	[2020-08-12 14:23:49,06] [info] SingleWorkflowRunnerActor: Submitting workflow
+	[2020-08-12 14:23:49,10] [info] Unspecified type (Unspecified version) workflow a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2 submitted
+	[2020-08-12 14:23:49,12] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2ma1e16ece-ea3f-4ae0-8ed6-e2a6080368b2[0m
+	[2020-08-12 14:23:49,12] [info] 1 new workflows fetched by cromid-c7c8999: a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2
+	[2020-08-12 14:23:49,14] [info] WorkflowManagerActor Starting workflow [38;5;2ma1e16ece-ea3f-4ae0-8ed6-e2a6080368b2[0m
+	[2020-08-12 14:23:49,14] [info] WorkflowManagerActor Successfully started WorkflowActor-a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2
+	[2020-08-12 14:23:49,15] [info] Retrieved 1 workflows from the WorkflowStoreActor
+	[2020-08-12 14:23:49,17] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+	[2020-08-12 14:23:49,27] [info] MaterializeWorkflowDescriptorActor [[38;5;2ma1e16ece[0m]: Parsing workflow as WDL 1.0
+	[2020-08-12 14:23:50,54] [info] MaterializeWorkflowDescriptorActor [[38;5;2ma1e16ece[0m]: Call-to-Backend assignments: toolkit_for_GTD.downSamplingFile -> Local
+	[2020-08-12 14:23:50,70] [[38;5;220mwarn[0m] Local [[38;5;2ma1e16ece[0m]: Key/s [memory, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+	[2020-08-12 14:23:53,96] [info] Not triggering log of token queue status. Effective log interval = None
+	[2020-08-12 14:23:55,05] [info] WorkflowExecutionActor-a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2 [[38;5;2ma1e16ece[0m]: Starting toolkit_for_GTD.downSamplingFile
+	[2020-08-12 14:23:55,99] [info] Assigned new job execution tokens to the following groups: a1e16ece: 1
+	[2020-08-12 14:23:57,60] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Unrecognized runtime attribute keys: disks, memory
+	[2020-08-12 14:23:57,64] [[38;5;220mwarn[0m] Localization via hard link has failed: /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/1891776096/9cb10df0-696f-4222-9fe7-1f4489b9f8da -> /Users/Torakay/Desktop/BD2k/Project/GenerateTestFiles/toolkit-for-generating-test-data/cromwell-input/9cb10df0-696f-4222-9fe7-1f4489b9f8da: Operation not permitted
+	[2020-08-12 14:23:57,73] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: [38;5;5m# Downsampling and Subsetting data by samtools
+	if [ -f /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/1891776096/9cb10df0-696f-4222-9fe7-1f4489b9f8da ]
 	then
 	    # converting cram to bam
-	    samtools view -b /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/-603652492/NWD119836.0005.recab.cram -T /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/-603652492/hs38DH.fa > NWD119836.0005.recab.cram.bam
+	    samtools view -b /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/-699538/downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam -T /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/1891776096/9cb10df0-696f-4222-9fe7-1f4489b9f8da > downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam.bam
 	    # downsampling and subsetting the file
-	    samtools view -bs 35.1 NWD119836.0005.recab.cram.bam > downsampled.NWD119836.0005.recab.cram.bam
+	    samtools view -bs 35.1 downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam.bam > downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam.bam
 	    # converting back to cram file
-	    samtools view -C downsampled.NWD119836.0005.recab.cram.bam -T /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/-603652492/hs38DH.fa -o downsampled.NWD119836.0005.recab.cram
+	    samtools view -C downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam.bam -T /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/1891776096/9cb10df0-696f-4222-9fe7-1f4489b9f8da -o downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam
 	else
 	    #downsampling and subsetting the file
-	    samtools view -bs 35.1 /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/inputs/-603652492/NWD119836.0005.recab.cram > downsampled.NWD119836.0005.recab.cram
+	    samtools view -bs 35.1 /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/inputs/-699538/downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam > downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam
 	fi[0m
-	[2020-08-11 11:33:25,64] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: executing: # make sure there is no preexisting Docker CID file
-	rm -f /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/docker_cid
+	[2020-08-12 14:23:57,78] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: executing: # make sure there is no preexisting Docker CID file
+	rm -f /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/docker_cid
 	# run as in the original configuration without --rm flag (will remove later)
 	docker run \
-	  --cidfile /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/docker_cid \
+	  --cidfile /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/docker_cid \
 	  -i \
 	   \
 	  --entrypoint /bin/bash \
-	  -v /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile:/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile:delegated \
-	  quay.io/ibrahimjabarkhel/toolkit-for-generating-test-data@sha256:751172a0bd178057f46db512148c832e468dbe7ff71e077327f51efe92f3f6a1 /cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/script
+	  -v /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile:/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile:delegated \
+	  quay.io/ibrahimjabarkhel/toolkit-for-generating-test-data@sha256:751172a0bd178057f46db512148c832e468dbe7ff71e077327f51efe92f3f6a1 /cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/script
 	
 	# get the return code (working even if the container was detached)
-	rc=$(docker wait [38;5;5mcat /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/docker_cid[0m)
+	rc=$(docker wait [38;5;5mcat /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/docker_cid[0m)
 	
 	# remove the container after waiting
-	docker rm [38;5;5mcat /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/docker_cid[0m
+	docker rm [38;5;5mcat /private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/docker_cid[0m
 	
 	# return exit code
 	exit $rc
-	[2020-08-11 11:33:29,28] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: job id: 43579
-	[2020-08-11 11:33:29,29] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Status change from - to WaitingForReturnCode
-	[2020-08-11 11:36:09,89] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m637add13[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Status change from WaitingForReturnCode to Done
-	[2020-08-11 11:36:10,67] [info] WorkflowExecutionActor-637add13-7c26-4511-bd34-0d074457e4b7 [[38;5;2m637add13[0m]: Workflow toolkit_for_GTD complete. Final Outputs:
+	[2020-08-12 14:23:58,75] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: job id: 44957
+	[2020-08-12 14:23:58,76] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Status change from - to WaitingForReturnCode
+	[2020-08-12 14:24:00,65] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2ma1e16ece[0mtoolkit_for_GTD.downSamplingFile:NA:1]: Status change from WaitingForReturnCode to Done
+	[2020-08-12 14:24:01,19] [info] WorkflowExecutionActor-a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2 [[38;5;2ma1e16ece[0m]: Workflow toolkit_for_GTD complete. Final Outputs:
 	{
-	  "toolkit_for_GTD.downSamplingFile.downsampledFile": "/private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/downsampled.NWD119836.0005.recab.cram"
+	  "toolkit_for_GTD.downSamplingFile.downsampledFile": "/private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam"
 	}
-	[2020-08-11 11:36:10,90] [info] WorkflowManagerActor WorkflowActor-637add13-7c26-4511-bd34-0d074457e4b7 is in a terminal state: WorkflowSucceededState
-	[2020-08-11 11:36:25,03] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
+	[2020-08-12 14:24:01,22] [info] WorkflowManagerActor WorkflowActor-a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2 is in a terminal state: WorkflowSucceededState
+	[2020-08-12 14:24:06,25] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
 	{
 	  "outputs": {
-	    "toolkit_for_GTD.downSamplingFile.downsampledFile": "/private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597170776088-0/cromwell-executions/toolkit_for_GTD/637add13-7c26-4511-bd34-0d074457e4b7/call-downSamplingFile/execution/downsampled.NWD119836.0005.recab.cram"
+	    "toolkit_for_GTD.downSamplingFile.downsampledFile": "/private/var/folders/9b/5gh5_01n6mbfzf8k9zdxrtsw0000gn/T/1597267416158-0/cromwell-executions/toolkit_for_GTD/a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2/call-downSamplingFile/execution/downsampled.downsampled.wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam"
 	  },
-	  "id": "637add13-7c26-4511-bd34-0d074457e4b7"
+	  "id": "a1e16ece-ea3f-4ae0-8ed6-e2a6080368b2"
 	}
-	[2020-08-11 11:36:29,36] [info] Workflow polling stopped
-	[2020-08-11 11:36:29,37] [info] 0 workflows released by cromid-178e0f4
-	[2020-08-11 11:36:29,38] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
-	[2020-08-11 11:36:29,38] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
-	[2020-08-11 11:36:29,39] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
-	[2020-08-11 11:36:29,40] [info] JobExecutionTokenDispenser stopped
-	[2020-08-11 11:36:29,40] [info] Aborting all running workflows.
-	[2020-08-11 11:36:29,41] [info] WorkflowLogCopyRouter stopped
-	[2020-08-11 11:36:29,41] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
-	[2020-08-11 11:36:29,41] [info] WorkflowStoreActor stopped
-	[2020-08-11 11:36:29,41] [info] WorkflowManagerActor All workflows finished
-	[2020-08-11 11:36:29,41] [info] WorkflowManagerActor stopped
-	[2020-08-11 11:36:29,83] [info] Connection pools shut down
-	[2020-08-11 11:36:29,83] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] SubWorkflowStoreActor stopped
-	[2020-08-11 11:36:29,83] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] Shutting down IoProxy - Timeout = 1800 seconds
-	[2020-08-11 11:36:29,83] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
-	[2020-08-11 11:36:29,83] [info] WriteMetadataActor Shutting down: 0 queued messages to process
-	[2020-08-11 11:36:29,83] [info] KvWriteActor Shutting down: 0 queued messages to process
-	[2020-08-11 11:36:29,83] [info] CallCacheWriteActor stopped
-	[2020-08-11 11:36:29,83] [info] JobStoreActor stopped
-	[2020-08-11 11:36:29,84] [info] DockerHashActor stopped
-	[2020-08-11 11:36:29,84] [info] IoProxy stopped
-	[2020-08-11 11:36:29,84] [info] ServiceRegistryActor stopped
-	[2020-08-11 11:36:29,86] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
-	[2020-08-11 11:36:29,86] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
-	[2020-08-11 11:36:29,86] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
-	[2020-08-11 11:36:29,88] [info] Database closed
-	[2020-08-11 11:36:29,88] [info] Stream materializer shut down
-	[2020-08-11 11:36:29,89] [info] WDL HTTP import resolver closed
+	[2020-08-12 14:24:08,75] [info] Workflow polling stopped
+	[2020-08-12 14:24:08,75] [info] 0 workflows released by cromid-c7c8999
+	[2020-08-12 14:24:08,76] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+	[2020-08-12 14:24:08,76] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+	[2020-08-12 14:24:08,76] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+	[2020-08-12 14:24:08,76] [info] JobExecutionTokenDispenser stopped
+	[2020-08-12 14:24:08,76] [info] Aborting all running workflows.
+	[2020-08-12 14:24:08,77] [info] WorkflowStoreActor stopped
+	[2020-08-12 14:24:08,77] [info] WorkflowLogCopyRouter stopped
+	[2020-08-12 14:24:08,77] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+	[2020-08-12 14:24:08,77] [info] WorkflowManagerActor All workflows finished
+	[2020-08-12 14:24:08,77] [info] WorkflowManagerActor stopped
+	[2020-08-12 14:24:08,95] [info] Connection pools shut down
+	[2020-08-12 14:24:08,95] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,95] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,95] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,95] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,95] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,95] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+	[2020-08-12 14:24:08,95] [info] JobStoreActor stopped
+	[2020-08-12 14:24:08,95] [info] SubWorkflowStoreActor stopped
+	[2020-08-12 14:24:08,95] [info] CallCacheWriteActor stopped
+	[2020-08-12 14:24:08,95] [info] Shutting down IoProxy - Timeout = 1800 seconds
+	[2020-08-12 14:24:08,96] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+	[2020-08-12 14:24:08,96] [info] KvWriteActor Shutting down: 0 queued messages to process
+	[2020-08-12 14:24:08,96] [info] DockerHashActor stopped
+	[2020-08-12 14:24:08,96] [info] IoProxy stopped
+	[2020-08-12 14:24:08,96] [info] ServiceRegistryActor stopped
+	[2020-08-12 14:24:08,97] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-08-12 14:24:08,97] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-08-12 14:24:08,97] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2020-08-12 14:24:08,98] [info] Database closed
+	[2020-08-12 14:24:08,98] [info] Stream materializer shut down
+	[2020-08-12 14:24:08,99] [info] WDL HTTP import resolver closed
