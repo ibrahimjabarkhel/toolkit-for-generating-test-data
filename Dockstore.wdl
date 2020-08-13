@@ -56,7 +56,6 @@ workflow toolkit_for_GTD {
   Int additional_diskSize = select_first([increase_disk_size, 20])
   
   # Get the size of the standard input file
-  Float inputFileSize = size(inputFile, "GB")
   Int inputFileSize = ceil(size(inputFile, "GB"))
   Int ref_file_size = ceil(size(referenceFile, "GB") + size(referenceIndexFile, "GB"))
   Int output_size = ceil((inputFileSize/100)*15)
