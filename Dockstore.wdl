@@ -7,32 +7,42 @@ task downSamplingFile {
         File referenceIndexFile
         String inputFileName
         Float disk_size
+        File? bamFile
+        File? downSBamFile
+        File? downSCramFile
   }
-  String s = disk_size
-  String string_before_decimal = sub(s, "\\..*", "")
-  Int new_disk_size = string_before_decimal
+  
 
   command {
     # Downsampling and Subsetting data by samtools
     if [ -f ${referenceFile} ]
     then
         # converting cram to bam
-        samtools view -b ${inputFile} -T ${referenceFile} > ${inputFileName}.bam
+        samtools view -b ${inputFile} -T ${referenceFile} > bamFile
         # downsampling and subsetting the file
-        samtools view -bs $((20 + RANDOM % 46)).1 ${inputFileName}.bam > downsampled.${inputFileName}.bam
+        samtools view -bs $((20 + RANDOM % 46)).1 ${bamFile} > downSBamFile
         # converting back to cram file
-        samtools view -C downsampled.${inputFileName}.bam -T ${referenceFile} -o downsampled.${inputFileName}
+        samtools view -C ${downSBamFile} -T ${referenceFile} -o downSCramFile
     else
         #downsampling and subsetting the file
-        samtools view -bs $((20 + RANDOM % 46)).1 ${inputFile} > downsampled.${inputFileName}
+        samtools view -bs $((20 + RANDOM % 46)).1 ${inputFile} > downSCramFile
     fi
   }
 
+  Float bamSize = size(bamFile, "GB")
+  Float downSBamSize = size(downSBamFile, "GB")
+  Float downSCramSize = size(downSCramFile, "GB")
+  Float final_disk_size = disk_size + bamSize + downSBamSize + downSCramSize
+
+  String s = final_disk_size
+  String string_before_decimal = sub(s, "\\..*", "")
+  Int new_disk_size = string_before_decimal
+
   output {
-    File downsampledFile = "downsampled.${inputFileName}"
+    File downsampledFile = "downSCramFile"
   }
 
- runtime {
+  runtime {
     docker: "quay.io/ibrahimjabarkhel/toolkit-for-generating-test-data:latest"
     memory: "15 GB"
     disks: "local-disk " + new_disk_size + " HDD"
@@ -53,7 +63,11 @@ workflow toolkit_for_GTD {
         # Optional input to increase all disk sizes in case of outlier sample with strange size behavior
         # declare int variable that will help in increase disk size if needed
         Int? increase_disk_size
+        File? bamFile
+        File? downSBamFile
+        File? downSCramFile
   }
+
   # Increase the disk size if the remaining disk size is less than 1 GB
   Int additional_diskSize = select_first([increase_disk_size, 20])
   
@@ -67,6 +81,8 @@ workflow toolkit_for_GTD {
                  inputFileName = inputFileName,
                  referenceFile = referenceFile,
                  referenceIndexFile = referenceIndexFile,
+                 bamFile = bamFile,
+                 downSBamFile = downSBamFile, downSCramFile = downSCramFile,
                  disk_size = inputFileSize + additional_diskSize + ref_file_size + output_size
   }
 }
